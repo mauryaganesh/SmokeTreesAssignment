@@ -38,7 +38,7 @@ SmokeTreesAssignment/
 
 You need to have the following tools installed on your system:
 
-- **Node.js** (for the backend and frontend development)
+- **Node.js, ReactJS** (for the backend and frontend development)
 - **npm** (for managing dependencies)
 - **SQLite3** (for the database)
 
@@ -61,26 +61,6 @@ You need to have the following tools installed on your system:
 3. **Create the `database.js` file**:
 
    This file initializes an SQLite database, creates two tables: `User` and `Address`, and exports a function to get the database connection.
-
-   ```javascript
-   // database.js
-   const sqlite3 = require("sqlite3").verbose();
-
-   // Initialize SQLite database in memory
-   const db = new sqlite3.Database("./database.db");
-
-   // Create User and Address tables
-   db.serialize(() => {
-     db.run(
-       "CREATE TABLE IF NOT EXISTS User (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)"
-     );
-     db.run(
-       "CREATE TABLE IF NOT EXISTS Address (id INTEGER PRIMARY KEY AUTOINCREMENT, userId INTEGER, address TEXT, FOREIGN KEY(userId) REFERENCES User(id))"
-     );
-   });
-
-   module.exports = db;
-   ```
 
 4. **Create the `server.js` file**:
 
@@ -149,7 +129,3 @@ You need to have the following tools installed on your system:
 ## Conclusion
 
 This project is a basic full-stack application that demonstrates user registration using a form. It stores data in a backend SQLite3 database and displays it on the frontend using React.
-
----
-
-Let me know if you need any help or further explanations!
