@@ -1,4 +1,4 @@
-# SmokeTreesAssignment - User Registration App
+# User Registration App
 
 ## Project Overview
 
